@@ -1,0 +1,58 @@
+@use "../../styles/variables" as *;
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: aliceblue;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  color: $primary-color;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .input {
+    width: calc(50% - 10px);
+    padding: 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: $border-radius;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+
+    &:focus {
+      background-color: #ffffff;
+      border-color: $primary-color;
+      outline: none;
+      box-shadow: inset 0px 0px 5px rgba(0, 123, 255, 0.5);
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
